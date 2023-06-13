@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1",
+        "category": "Bebidas",
+        "items": [
+            {
+                "id": 1,
+                "name": "Agua",
+                "stock": 0,
+                "min": "1"
+            }
+        ]
+    }
+]

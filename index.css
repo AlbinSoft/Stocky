@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Inter:wght@200;400;500;600;700;800;900&family=Merriweather:wght@700&family=Poppins:wght@300;400;500&family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+:root {
+	--color-button-bg: #3AA756;
+	--color-button-fg: #FFFFFF;
+	--color-alert-bg:  #FFFFFF55;
+	--color-alert-fg:  #FF4500;
+	--color-panel-fg:  #000000;
+	--sprites:  url('images/sprites.svg');
+	--sprite-edit-wh: 22px 22px;
+	--sprite-edit-xy: 16px 16px;
+	--sprite-tag-wh:  22px 22px;
+	--sprite-tag-xy:  80px 16px;
+	--sprite-prod-wh: 22px 22px;
+	--sprite-prod-xy: 124px 16px;
+}
+
+body {
+	margin: 0px;
+	font-family: 'Open Sans';
+	font-family: 'Roboto Condensed';
+	text-rendering: optimizeLegibility;
+}
+body:before {
+	position: fixed;
+	top   : 0%;
+	left  : 0%;
+	right : 0%;
+	bottom: 0%;
+	background-image: url('images/body-bg.jpg');
+	filter: brightness(0.90) contrast(0.85);
+	content: '';
+}
+
+
+
+.panel {
+	position: relative;
+	width: calc(100% - 40px);
+	max-width: 420px;
+	margin: 50px auto;
+	padding: 10px;
+	color: var(--color-panel-fg);
+	backdrop-filter: blur(10px) saturate(150%);
+	background-color: rgba(255, 255, 255, 0.50);
+	border-radius: 12px;
+	border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.cat_wrap:not(:first-child) {
+	margin: 20px 0px 0px 0px;
+}
+.cats_list {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.cat_name {
+	display: block;
+	margin: 0px 0px 10px 0px;
+	font-size  : 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border-bottom: 1px solid;
+}
+.items_list {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.item_wrap {
+	display: grid;
+	grid-template-columns: 1fr 20px 40px 20px;
+	margin : 5px -8px 0px -8px;
+	padding: 5px 8px 5px 8px;
+	user-select: none;
+}
+.item_wrap.alert {
+	color: var(--color-alert-fg);
+	background: var(--color-alert-bg);
+	border-radius: 4px;
+}
+.item_dec,
+.item_inc {
+	width : 24px;
+	height: 18px;
+	color: var(--color-button-fg);
+	text-align: center;
+	background: lightblue;
+	border-radius: 4px;
+	background: var(--color-button-bg);
+	cursor: pointer;
+}
+.item_qty {
+	color: var(--color-panel-fg);
+	font-family: 'Inconsolata';
+	text-align: center;
+}
+
+
+
+.config {
+	position: fixed;
+	top   : 50px;
+}
+.config {
+	width : 250px;
+	padding: 20px;
+	border: unset;
+	border-radius: 12px;
+	border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.config_frm {
+}
+.config_fields {
+	display: flex;
+	flex-flow: column;
+}
+.config_fields label {
+	display: block;
+	margin : 0px 0px 3px 0px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.config_fields input,
+.config_fields select {
+	margin: 0px 0px 20px 0px;
+	padding: 6px 12px;
+	border: 1px solid #C7C7C7;
+}
+.config_btns {
+	display: flex;
+	justify-content: space-between;
+	margin: 0px;
+}
+.config_cls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top   : 0px;
+	right : 0px;
+	width : 24px;
+	height: 24px;
+	border-radius: 12px 12px 0px 0px;
+	cursor: pointer;
+}
+.config_rem,
+.config_set {
+	width : 100px;
+	padding: 5px 0px;
+	box-sizing: border-box;
+	font-size: 12px;
+	text-align: center;
+	text-transform: uppercase;
+	background: unset;
+	border: 1px solid var(--color-button-bg);
+	border-radius: 5px;
+	cursor: pointer;
+}
+.config_set {
+	color: var(--color-button-fg);
+	background: var(--color-button-bg);
+}
+
+
+
+@media (max-width: 767px) {
+	.panel {
+		margin: 20px auto 64px auto;
+		box-sizing: border-box;
+	}
+	.actions {
+		display: flex;
+		flex-flow: row;
+		justify-content: center;
+		gap: 20px;
+		position: fixed;
+		bottom: 0px;
+		left  : 0px;
+		width : 100%;
+		padding: 8px 10px;
+		box-sizing: border-box;
+		background: #F4F4F455;
+	}
+	.actions a {
+		width: 48px;
+		height: 32px;
+		background-color: #FFFFFF;
+		background-image: var(--sprites);
+		border-radius: 12px;
+		cursor: pointer;
+	}
+	.action_addcategory {
+		background-position: -68px -10px;
+	}
+	.action_addproduct {
+		background-position: -132px -10px;
+	}
+}
+@media (min-width: 768px) {
+	.actions {
+		display: flex;
+		flex-flow: column;
+		gap: 10px;
+		position: fixed;
+		bottom: 10px;
+		left  : 10px;
+	}
+	.actions a {
+		width : 48px;
+		height: 48px;
+		background-color: #FFFFFF;
+		background-image: var(--sprites);
+		border-radius: 24px;
+		cursor: pointer;
+	}
+	.action_addcategory {
+		background-position: -68px -4px;
+	}
+	.action_addproduct {
+		background-position: -132px -4px;
+	}
+}
+
+.action_editcat {
+	float: right;
+	width : 24px;
+	height: 24px;
+	background-image: var(--sprites);
+	cursor: pointer;
+}
+.action_editcat {
+	background-position: -16px -16px;
+}
