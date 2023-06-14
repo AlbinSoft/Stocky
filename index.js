@@ -16,7 +16,7 @@ fetch('stock.php').then(resp => resp.json()).then(data => {
 function App(props) {
 
 	const EMPTY_CAT  = { id: 0, name: '', items: [] };
-	const EMPTY_PROD = { cid: 0, id: 0, name: '', min: 0, stock: 0 };
+	const EMPTY_PROD = { cat: 0, id: 0, name: '', min: 0, stock: 0 };
 
 	const [ cat,  setCat  ] = useState(null);
 	const [ prod, setProd ] = useState(null);
@@ -46,6 +46,7 @@ function App(props) {
 	};
 
 	const edit_prod = (item, cat) => {
+	//	if(item===EMPTY_PROD) item.cat = 0;
 	//	if(cat) item.cid = stock.value.findIndex((c) => c.category==cat.category);
 		setProd({...item});
 	};
