@@ -3,4 +3,4 @@ Aplicación muy sencilla para la gestión de stock. Por ejemplo para controlar la 
 
 ## Demo
 
-[![Stocky](https://github.com/AlbinSoft/Stocky/raw/main/demo.png)](https://github.com/AlbinSoft/Stocky/raw/main/demo.mp4)    // Video Link
+[![Stocky](https://github.com/AlbinSoft/Stocky/raw/main/demo.png)](https://albin.es/github/stocky-demo.mp4)
